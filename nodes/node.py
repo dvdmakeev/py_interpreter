@@ -2,13 +2,13 @@ from abc import abstractclassmethod
 
 class Node:
     @abstractclassmethod
-    def evaluate():
+    def evaluate() -> int:
         pass
 
-class Factor(Node):
+class Expression(Node):
     pass
 
-class Expression(Node):
+class Factor(Expression):
     pass
 
 class BinaryExpression(Expression):

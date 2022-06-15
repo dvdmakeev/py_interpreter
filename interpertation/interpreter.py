@@ -1,11 +1,14 @@
-from lexing import Lexer
-from parsing import Parser
+from lexing.lexer import Lexer
+from parsing.parser import Parser
 
 class Interpreter:
 
-    def __init__(self, lexer: Lexer, parser: Parser) -> None:
-        self.lexer = lexer
-        self.parser = parser
+    def __init__(self) -> None:
+        return
 
-    def interpret():
-        pass
+    def interpret(self, source: str) -> int:
+        lexer = Lexer(source)
+        parser = Parser(lexer)
+
+        node = parser.parse()
+        return node.evaluate()
